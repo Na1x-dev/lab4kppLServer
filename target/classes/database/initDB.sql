@@ -1,6 +1,7 @@
-drop table users;
-drop table employees;
-drop table applications;
+
+-- drop table users;
+-- drop table employees;
+-- drop table applications;
 
 CREATE TABLE IF NOT EXISTS users
 (
