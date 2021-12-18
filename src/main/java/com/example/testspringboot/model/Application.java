@@ -30,8 +30,12 @@ public class Application {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "score")
+    private Integer score;
+
     @Column(name = "client_id")
     private Integer clientId;
+
 
     public Integer getId() {
         return id;
@@ -55,6 +59,10 @@ public class Application {
 
     public String getStatus() {
         return status;
+    }
+
+    public Integer getScore() {
+        return score;
     }
 
     public Integer getClientId() {
@@ -83,6 +91,10 @@ public class Application {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
     public void setClientId(Integer clientId) {

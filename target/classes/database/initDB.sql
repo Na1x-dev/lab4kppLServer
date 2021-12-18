@@ -1,7 +1,7 @@
 
--- drop table users;
--- drop table employees;
--- drop table applications;
+drop table users;
+drop table employees;
+drop table applications;
 
 CREATE TABLE IF NOT EXISTS users
 (
@@ -31,5 +31,6 @@ CREATE TABLE IF NOT EXISTS applications
     job_volume DOUBLE PRECISION NOT NULL,
     price DOUBLE PRECISION NOT NULL,
     status VARCHAR NOT NULL,
+    score INTEGER,
     client_id BIGSERIAL NOT NULL
     );

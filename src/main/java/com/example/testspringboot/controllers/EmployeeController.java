@@ -1,6 +1,7 @@
 package com.example.testspringboot.controllers;
 
 
+import com.example.testspringboot.model.Application;
 import com.example.testspringboot.model.Employee;
 import com.example.testspringboot.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,15 @@ public class EmployeeController {
         return employee != null
                 ? new ResponseEntity<>(employee, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
+
+    @PutMapping(value = "/employees/byId/{id}")
+    public ResponseEntity<?> update(@PathVariable(name = "id") int id, @RequestBody Employee employee) {
+        final boolean updated = employeeService.update(employee, id);
+
+        return updated
+                ? new ResponseEntity<>(HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }
 
     @DeleteMapping(value = "/employees/byId/{id}")
